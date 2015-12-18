@@ -10,25 +10,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|left"
-        android:layout_weight="1" />
+
+        android:text="left" />
 
     <TextView
         android:id="@+id/titleView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
         android:layout_weight="1"
         android:text="temp string"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="30sp"
-        android:textAlignment="center" />
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/rightButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|right"
-        android:layout_weight="1" />
+
+        android:text="right" />
 
 
 </LinearLayout>
