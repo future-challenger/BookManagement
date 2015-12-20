@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BookManagement</string>
+    <!--Login-->
+    <string name="un">User name</string>
+    <string name="pwd">Password</string>
+    <string name="Login">Login</string>
+    <string name="Register">Register</string>
 </resources>
