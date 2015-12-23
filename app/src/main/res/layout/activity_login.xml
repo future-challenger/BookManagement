@@ -10,31 +10,31 @@
     tools:context="book.cn.bookmanagement.LoginActivity">
 
     <EditText
-        android:id="@+id/userName"
+        android:id="@+id/userNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/un" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/userName"
+        android:layout_below="@id/userNameEditText"
         android:hint="@string/pwd" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@id/password"
-        android:layout_below="@id/password"
+        android:layout_alignRight="@id/passwordEditText"
+        android:layout_below="@id/passwordEditText"
         android:text="@string/Register" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password"
+        android:layout_below="@id/passwordEditText"
         android:layout_toLeftOf="@id/registerButton"
         android:text="@string/Login" />
 

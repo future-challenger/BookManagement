@@ -19,6 +19,7 @@ public class GsonRequest<T> extends Request<T> {
     private final Gson _gson = new Gson();
     private final Class<T> _clazz;
     private final Map<String, String> _headers;
+    private final Map<String, String> _params;
     private final Response.Listener<T> _listener;
 
     /**
@@ -29,16 +30,23 @@ public class GsonRequest<T> extends Request<T> {
      * @param headers Map of request headers
      */
     public GsonRequest(String url, Class<T> clazz, Map<String, String> headers,
+                       Map<String, String> params,
                        Response.Listener<T> listener, Response.ErrorListener errorListener) {
         super(Request.Method.GET, url, errorListener);
         this._clazz = clazz;
         this._headers = headers;
+        this._params = params;
         this._listener = listener;
     }
 
     @Override
     public Map<String, String> getHeaders() throws AuthFailureError {
         return _headers != null ? _headers : super.getHeaders();
+    }
+
+    @Override
+    protected Map<String, String> getParams() throws AuthFailureError {
+        return _params != null ? _params : super.getParams();
     }
 
     @Override
@@ -59,5 +67,20 @@ public class GsonRequest<T> extends Request<T> {
     @Override
     protected void deliverResponse(T response) {
         _listener.onResponse(response);
+    }
+
+    public static class RequestBuilder {
+        private int _method = Method.GET;
+        private String _url;
+        private Class _clazz;
+        private Response.Listener _successListener;
+        private Response.ErrorListener _errorListener;
+        private Map<String, String> _header;
+        private Map<String, String> _params;
+
+        public RequestBuilder url(String url) {
+            this._url = url;
+            return this;
+        }
     }
 }

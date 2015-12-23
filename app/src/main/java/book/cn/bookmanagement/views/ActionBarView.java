@@ -70,6 +70,8 @@ public class ActionBarView extends LinearLayout implements View.OnClickListener 
             } else {
                 titleTextView.setVisibility(View.INVISIBLE);
             }
+
+            a.recycle();
         }
     }
 
